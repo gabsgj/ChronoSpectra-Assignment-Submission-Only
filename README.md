@@ -1,5 +1,95 @@
 # ChronoSpectra
 
+**Name:** Gabriel James
+
+**University Registration Number:** TCR24CS029
+
+**Pattern Recognition Assignment 2**
+
+**Live Website:** [https://chronospectra.gabrieljames.me/](https://chronospectra.gabrieljames.me/)
+
+## Getting Started
+
+### Quick Start (Recommended – Docker)
+
+The fastest way to run ChronoSpectra with all dependencies pre-configured:
+
+```bash
+# Clone repository
+git clone https://github.com/gabsgj/chronospectra.git
+cd chronospectra
+
+# Start both frontend and backend with one command
+docker compose up --build
+```
+
+Available endpoints immediately:
+- **Frontend UI:** `http://localhost:5173` – Interactive dashboard with live predictions
+- **API Server:** `http://localhost:8000` – REST endpoints for data/signals/models
+- **OpenAPI Docs:** `http://localhost:8000/docs` – Interactive API explorer
+- **Health Check:** `http://localhost:8000/health` – System status
+
+### Manual Local Setup
+
+**For development without Docker:**
+
+#### Backend Setup
+```bash
+cd backend
+
+# Install runtime dependencies
+python -m pip install -r requirements.runtime.txt
+
+# Start with auto-reload (useful for development)
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+#### Frontend Setup
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start Vite dev server with HMR
+npm run dev
+
+# In another terminal, run type checking
+npm run type-check
+
+# Or lint/format
+npm run lint
+```
+
+### Postinstall Validation
+
+After startup, verify everything is working:
+
+```bash
+# Check Backend Health
+curl http://localhost:8000/health
+# Expected response: {"status": "ok", "environment": "development"}
+
+# List configured stocks
+curl http://localhost:8000/config
+# Returns stocks.json merged with environment configuration
+
+# Fetch sample data + signals
+curl http://localhost:8000/data/AAPL?start_date=2024-01-01
+# Returns OHLCV data for the specified date range
+
+# Run backend syntax check
+python -m compileall backend
+```
+
+Then:
+1. Open `http://localhost:5173` in your browser
+2. Verify stock data loads on the dashboard
+3. Check `/docs` for interactive API documentation
+4. Confirm `stocks.json` has at least one `enabled: true` stock
+
+
+
 [![Live Website](https://img.shields.io/badge/Live%20Website-https%3A%2F%2Fchronospectra.gabrieljames.me%2F-blue?style=for-the-badge&logo=vercel)](https://chronospectra.gabrieljames.me/)
 ![Python](https://img.shields.io/badge/Backend-FastAPI%20%7C%20PyTorch-blue)
 ![React](https://img.shields.io/badge/Frontend-React%2019%20%7C%20TypeScript-61dafb)
@@ -335,100 +425,6 @@ chronospectra/
 | **Type Safety** | TypeScript frontend + Python type hints | Catch integration bugs at development time, not production |
 | **Async-First** | FastAPI + async/await throughout | Natural handling of I/O-bound operations (API calls, SSE) |
 | **Immutable Artifacts** | Versioned checkpoints + scalers | Reproducible predictions; easy rollback if drift detected |
-
-## Getting Started
-
-### Prerequisites & System Requirements
-
-| Component | Minimum | Recommended | Purpose |
-|---|---|---|---|
-| **Python** | 3.10 | 3.12+ | Backend runtime |
-| **Node.js** | 18 LTS | 22+ | Frontend build & dev |
-| **npm** | 9 | 10+ | Package management |
-| **RAM** | 4GB | 8GB+ | Model inference & dev server |
-| **Disk** | 2GB | 5GB+ | Models, artifacts, node_modules |
-| **Docker** | Optional | Recommended | Orchestrated local development |
-
-**Operating Systems:** Linux, macOS, Windows (WSL2 recommended)
-
-### Quick Start (Recommended – Docker)
-
-The fastest way to run ChronoSpectra with all dependencies pre-configured:
-
-```bash
-# Clone repository
-git clone https://github.com/gabsgj/chronospectra.git
-cd chronospectra
-
-# Start both frontend and backend with one command
-docker compose up --build
-```
-
-Available endpoints immediately:
-- **Frontend UI:** `http://localhost:5173` – Interactive dashboard with live predictions
-- **API Server:** `http://localhost:8000` – REST endpoints for data/signals/models
-- **OpenAPI Docs:** `http://localhost:8000/docs` – Interactive API explorer
-- **Health Check:** `http://localhost:8000/health` – System status
-
-### Manual Local Setup
-
-**For development without Docker:**
-
-#### Backend Setup
-```bash
-cd backend
-
-# Install runtime dependencies
-python -m pip install -r requirements.runtime.txt
-
-# Start with auto-reload (useful for development)
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-#### Frontend Setup
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start Vite dev server with HMR
-npm run dev
-
-# In another terminal, run type checking
-npm run type-check
-
-# Or lint/format
-npm run lint
-```
-
-### Postinstall Validation
-
-After startup, verify everything is working:
-
-```bash
-# Check Backend Health
-curl http://localhost:8000/health
-# Expected response: {"status": "ok", "environment": "development"}
-
-# List configured stocks
-curl http://localhost:8000/config
-# Returns stocks.json merged with environment configuration
-
-# Fetch sample data + signals
-curl http://localhost:8000/data/AAPL?start_date=2024-01-01
-# Returns OHLCV data for the specified date range
-
-# Run backend syntax check
-python -m compileall backend
-```
-
-Then:
-1. Open `http://localhost:5173` in your browser
-2. Verify stock data loads on the dashboard
-3. Check `/docs` for interactive API documentation
-4. Confirm `stocks.json` has at least one `enabled: true` stock
-
 
 ## Configuration
 
