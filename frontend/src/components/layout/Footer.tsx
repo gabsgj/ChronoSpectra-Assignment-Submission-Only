@@ -46,7 +46,7 @@ export function Footer() {
 
           <nav className="flex gap-6 text-xs font-medium text-teal/80">
             <a
-              href="https://gabrieljames.me"
+              href="https://gabrieljames.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-teal"

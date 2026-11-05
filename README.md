@@ -6,7 +6,7 @@
 
 **Pattern Recognition Assignment 2**
 
-**Live Website:** [https://chronospectra.gabrieljames.me/](https://chronospectra.gabrieljames.me/)
+**Live Website:** [https://chronospectra.gabrieljames.dev/](https://chronospectra.gabrieljames.dev/)
 
 ## Getting Started
 
@@ -90,7 +90,7 @@ Then:
 
 
 
-[![Live Website](https://img.shields.io/badge/Live%20Website-https%3A%2F%2Fchronospectra.gabrieljames.me%2F-blue?style=for-the-badge&logo=vercel)](https://chronospectra.gabrieljames.me/)
+[![Live Website](https://img.shields.io/badge/Live%20Website-https%3A%2F%2Fchronospectra.gabrieljames.dev%2F-blue?style=for-the-badge&logo=vercel)](https://chronospectra.gabrieljames.dev/)
 ![Python](https://img.shields.io/badge/Backend-FastAPI%20%7C%20PyTorch-blue)
 ![React](https://img.shields.io/badge/Frontend-React%2019%20%7C%20TypeScript-61dafb)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
@@ -204,7 +204,7 @@ ChronoSpectra orchestrates an end-to-end time-series forecasting workflow:
 
 ### Live Deployment
 
-- Live App: [`https://chronospectra.gabrieljames.me/`](https://chronospectra.gabrieljames.me/)
+- Live App: [`https://chronospectra.gabrieljames.dev/`](https://chronospectra.gabrieljames.dev/)
 
 - Repository: [`https://github.com/gabsgj/chronospectra`](https://github.com/gabsgj/chronospectra)
 
@@ -1058,7 +1058,7 @@ ChronoSpectra welcomes contributions! Areas where help is appreciated:
 
 ## Contact & Resources
 
-- **Live Demo:** [ChronoSpectra Dashboard](https://chronospectra.gabrieljames.me/)
+- **Live Demo:** [ChronoSpectra Dashboard](https://chronospectra.gabrieljames.dev/)
 - **Repository:** [GitHub](https://github.com/gabsgj/chronospectra)
 - **Issues & Discussions:** [GitHub Issues](https://github.com/gabsgj/chronospectra/issues)
 - **Email:** [Contact Author](mailto:iamgabrieljames@gmail.com)
